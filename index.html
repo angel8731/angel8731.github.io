@@ -105,7 +105,7 @@
         <article class="article content gallery" itemscope="" itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2019/02/01/记录一次Golang在实战项目中的表现/" itemprop="url">记录一次Golang在实战项目中的表现</a>
+            <a href="/2019/02/01/go-first-time-in-actual-combat/" itemprop="url">记录一次Golang在实战项目中的表现</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -113,24 +113,26 @@
             <time datetime="2019-02-01T11:31:12.000Z" itemprop="datePublished">2月 1 2019</time>
         </span>
         
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Go/">Go</a>
+        </span>
+        
         
         <span class="column is-narrow">
             
             
-            7 分钟 读完 (约 1055 字)
+            7 分钟 读完 (约 1063 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h5 id="为什么要选择Golang来开发应用？"><a href="#为什么要选择Golang来开发应用？" class="headerlink" title="为什么要选择Golang来开发应用？"></a><strong>为什么要选择Golang来开发应用？</strong></h5><p>从事前端开发工作已有7年多，团队的技术栈也都是基于Nodejs来做服务端开发。但是由于Node的稳定性相对较弱（如：Java，python，php），性能也并不算出众，相对的优势就是处理网络io密集型的应用上稍有剑术，能够异步非阻塞的处理业务逻辑，虽然有了很多promise实现的同步库处理回调的深渊，但是显的并不是那么优雅。</p>
-<p><strong> Go机遇 </strong><br>2018年的虚拟货币的盛行，和哥们闲（song）聊（yong）中（xia），买了一些虚拟货币做投资，现在看来真的是。。。！本想通过了解下区块链看看有没有翻盘点（当时还不是一个合格的韭菜，竟然幻想着能回本，实在是想多了），一个非常偶然的机会接触到了Golang。读了一些关于Go的书，发现这货也非常适合做Io开销很大的服务呀。而且还天然的支持了并发操作。此时正好部门有个新的项目，机会来了，可以用go大显身手了。</p>
-<p><strong> Go框架 </strong><br>刚才说过，我们服务端的技术栈是Nodejs，后端的同学都是java，部门没有人搞过Go，一切都是从零开始。为了能够尽快上手并且减少不必要的风险，我们决定选一个相对成熟的框架。开始本来想用公司的内部开源框架，但是由于文档不全，已经没有人维护了，最后选了beego作为了我们本次项目的框架。其实项目本身很容易，说白了就是一个页面，但是为了做到秒开的级别，我们还是做了很多的优化。里边用到缓存，接口的并发，模板引擎的渲染，相对来说beego还是非常适合这个小项目了。</p>
-<p><strong> Go并发 </strong><br>虽然是一个页面，但是业务中调用了很多接口，还有些是需要并发请求的。所以我们用了Go里边最出名的技术“协程（Goroutine）”。通过并发的请求，我们降低了接口的等待时长，加快了页面的访问速度。</p>
-<p><strong> Go扩展包 </strong><br>为了减轻服务器的压力，所以需要对接口做缓存处理。我们选择了用redis来缓存。因为beego带的redis的插件是redigo，我们便没有再看其他的就直接上手用了，果不其然，在本地跑的好好的代码，在上测试环境就不行了，查了原因，竟是因为redigo不支持cluster，干，只好紧急换包，查了几个在github上星比较多的几个，最后选择了go-redis。通过这点可以看出，作为一个年轻的语言，还有很长的路要走。</p>
-<p><strong> Go部署 </strong><br>由于墙的原因，我们选择了govendor作为包的依赖管理工具，并且把vendor目录也一并传到了git上，这样保证包的版本一致，主要是不用担心墙的问题，并且部署也会更快一些。这一点上，我觉得go的部署是及其的方便的。只需要编译成一个二进制文件，扔到服务器上跑个守护进程就Ok了，so easy！！！</p>
-<p>总结：通过半个月的开发（本人承包了前后端），感觉Go是一门上手非常容易的语言。如果有c/c++开发经验的同学几乎可以一周上手做项目了。现在已经深深的喜欢上了这门语言。所以，今后会开始分享一下有关Go的文章，希望大家能多多支持。</p>
-
+        <p><img src="/2019/02/01/go-first-time-in-actual-combat/1.jpg" alt=""></p>
+<h5 id="为什么要选择Golang来开发应用？"><a href="#为什么要选择Golang来开发应用？" class="headerlink" title="为什么要选择Golang来开发应用？"></a><strong>为什么要选择Golang来开发应用？</strong></h5><p>从事前端开发工作已有7年多，团队的技术栈也都是基于Nodejs来做服务端开发。但是由于Node的稳定性相对较弱（如：Java，python，php），性能也并不算出众，相对的优势就是处理网络io密集型的应用上稍有剑术，能够异步非阻塞的处理业务逻辑，虽然有了很多promise实现的同步库处理回调的深渊，但是显的并不是那么优雅。</p>
+        <p class="article-more-link">
+            <a href="/2019/02/01/go-first-time-in-actual-combat/#more">阅读更多</a>
+        </p>
     
     </div>
     
