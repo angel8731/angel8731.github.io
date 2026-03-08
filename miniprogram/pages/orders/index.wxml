@@ -1,0 +1,12 @@
+<view class="card">
+  <view class="title">订单记录</view>
+</view>
+<block wx:for="{{orders}}" wx:key="id">
+  <view class="card">
+    <view class="title">{{item.mode}} - ¥{{item.amount}}</view>
+    <view class="sub">订单号：{{item.id}}</view>
+    <view class="sub">网点：{{item.station}}</view>
+    <view class="sub">支付方式：{{item.payType}}</view>
+    <view class="sub">时间：{{item.time}}</view>
+  </view>
+</block>
