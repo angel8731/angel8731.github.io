@@ -1,0 +1,14 @@
+<view class="card">
+  <view class="title">商家后台（示例）</view>
+  <view class="sub">今日订单：{{today.orders}}</view>
+  <view class="sub">今日收入：¥{{today.income}}</view>
+  <view class="sub">洗车次数：{{today.washes}}</view>
+  <view class="sub">在线设备：{{today.onlineDevices}}</view>
+</view>
+
+<view class="card">
+  <view class="title">后台模块</view>
+  <block wx:for="{{modules}}" wx:key="*this">
+    <view class="sub">- {{item}}</view>
+  </block>
+</view>

@@ -1,0 +1,20 @@
+<view class="card">
+  <view class="title">会员中心</view>
+  <view class="sub">普通用户：15元/次</view>
+  <view class="sub">会员用户：9元/次</view>
+</view>
+
+<block wx:for="{{plans}}" wx:key="name">
+  <view class="card">
+    <view class="title">{{item.name}} - ¥{{item.price}}</view>
+    <view class="sub">{{item.desc}}</view>
+    <button class="primary-btn" data-plan="{{item}}" bindtap="buyPlan">立即购买</button>
+  </view>
+</block>
+
+<view class="card">
+  <view class="title">余额充值活动</view>
+  <block wx:for="{{rechargeActivities}}" wx:key="*this">
+    <view class="sub">{{item}}</view>
+  </block>
+</view>

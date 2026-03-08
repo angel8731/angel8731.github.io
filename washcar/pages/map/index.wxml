@@ -1,0 +1,14 @@
+<view class="card">
+  <view class="title">附近洗车点</view>
+  <view class="sub">状态：空闲 / 使用中 / 故障</view>
+</view>
+
+<block wx:for="{{stations}}" wx:key="id">
+  <view class="card">
+    <view class="title">{{item.name}}</view>
+    <view class="sub">设备编号：{{item.id}}</view>
+    <view class="sub">距离：{{item.distance}}</view>
+    <view class="sub">状态：{{item.status}}</view>
+    <button class="primary-btn" data-lat="{{item.lat}}" data-lng="{{item.lng}}" data-name="{{item.name}}" bindtap="navToStation">导航到设备</button>
+  </view>
+</block>

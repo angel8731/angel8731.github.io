@@ -1,0 +1,8 @@
+@import "../../app.wxss";
+
+input {
+  border: 1rpx solid #d0d7de;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-top: 16rpx;
+}

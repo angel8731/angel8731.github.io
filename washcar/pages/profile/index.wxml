@@ -1,0 +1,19 @@
+<view class="card">
+  <view class="title">个人资料</view>
+  <view class="sub">昵称：{{user.nickname}}</view>
+  <view class="sub">手机号：{{user.phone}}</view>
+  <view class="sub">车牌号：{{user.plate}}</view>
+</view>
+
+<view class="card">
+  <view class="title">钱包与积分</view>
+  <view class="sub">余额：¥{{user.balance}}</view>
+  <view class="sub">积分：{{user.points}}（100积分=1次洗车）</view>
+</view>
+
+<view class="card">
+  <view class="title">优惠券</view>
+  <block wx:for="{{coupons}}" wx:key="*this">
+    <view class="sub">{{item}}</view>
+  </block>
+</view>

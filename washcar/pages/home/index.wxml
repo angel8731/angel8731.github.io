@@ -1,0 +1,20 @@
+<view class="card">
+  <view class="title">欢迎使用无人洗车</view>
+  <view class="sub">车牌：{{currentPlate}}</view>
+</view>
+
+<view class="card">
+  <view class="title">会员权益</view>
+  <view class="sub">等级：{{membership.level}}</view>
+  <view class="sub">剩余次数：{{membership.remainTimes}}</view>
+  <view class="sub">到期时间：{{membership.expireAt}}</view>
+</view>
+
+<view class="card">
+  <view class="title">快捷入口</view>
+  <view class="grid">
+    <block wx:for="{{quickActions}}" wx:key="name">
+      <button class="primary-btn" data-path="{{item.path}}" bindtap="goAction">{{item.name}}</button>
+    </block>
+  </view>
+</view>

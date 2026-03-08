@@ -1,0 +1,19 @@
+<view class="card">
+  <view class="title">扫码启动洗车</view>
+  <button class="primary-btn" bindtap="scanDevice">扫码设备二维码</button>
+  <view class="sub">设备码：{{deviceCode || '未扫码'}}</view>
+</view>
+
+<view class="card">
+  <view class="title">选择洗车模式</view>
+  <picker mode="selector" range="{{washModes}}" bindchange="chooseMode">
+    <view class="sub">当前模式：{{selectedMode}}</view>
+  </picker>
+  <button class="primary-btn" bindtap="startWash">支付/扣会员并启动</button>
+</view>
+
+<view class="card">
+  <view class="title">团购核销</view>
+  <input placeholder="输入团购券码（示例 TG123456）" bindinput="setCouponCode" />
+  <button class="primary-btn" bindtap="redeemCoupon">核销并启动设备</button>
+</view>
