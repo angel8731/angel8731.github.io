@@ -1,20 +1,54 @@
-<view class="card">
-  <view class="title">欢迎使用无人洗车</view>
-  <view class="sub">车牌：{{currentPlate}}</view>
-</view>
+<view class="home-page">
+  <view class="profile-card">
+    <view class="avatar">👤</view>
+    <view class="profile-main">
+      <view class="user-name">{{user.name}}</view>
+      <view class="user-phone">{{user.phone}}</view>
+    </view>
+    <view class="profile-actions">
+      <text class="action-icon" bindtap="onTapNotice">🔔</text>
+      <text class="action-icon" bindtap="onTapSearch">🔍</text>
+    </view>
+  </view>
 
-<view class="card">
-  <view class="title">会员权益</view>
-  <view class="sub">等级：{{membership.level}}</view>
-  <view class="sub">剩余次数：{{membership.remainTimes}}</view>
-  <view class="sub">到期时间：{{membership.expireAt}}</view>
-</view>
+  <view class="service-grid">
+    <block wx:for="{{services}}" wx:key="name">
+      <view class="service-item" style="background: {{item.bg}};" data-path="{{item.path}}" bindtap="goAction">
+        <view class="service-icon">{{item.icon}}</view>
+        <view class="service-name">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
 
-<view class="card">
-  <view class="title">快捷入口</view>
-  <view class="grid">
-    <block wx:for="{{quickActions}}" wx:key="name">
-      <button class="primary-btn" data-path="{{item.path}}" bindtap="goAction">{{item.name}}</button>
+  <view class="section-title-row">
+    <text class="section-title">附近门店</text>
+    <text class="section-more">›</text>
+  </view>
+
+  <view class="store-list">
+    <block wx:for="{{stores}}" wx:key="name">
+      <view class="store-card">
+        <view class="store-top">
+          <view class="store-photo">门店</view>
+          <view class="store-summary">
+            <view class="name-row">
+              <text class="store-name">{{item.name}}</text>
+              <text class="store-distance">{{item.distance}}</text>
+            </view>
+            <view class="store-sub">收费标准: {{item.price}}</view>
+            <view class="status-row">
+              <text class="status-label">洗车位状态：</text>
+              <text class="badge badge-primary">🚘 {{item.total}}</text>
+              <text class="badge">{{item.inUse}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="store-bottom">
+          <view class="address">📍 {{item.address}}</view>
+          <button class="nav-btn" size="mini" data-index="{{index}}" bindtap="navigateStore">➤ 导航</button>
+        </view>
+      </view>
     </block>
   </view>
 </view>
